@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RestWell – Book a Service</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+  <div class="logo">RestWell</div>
+
+  <div class="nav-links">
+    <a href="home.html">Home</a>
+    <a href="services.html">Services</a>
+    <a class="active" href="history.html">My Bookings </a>
+    <a href="#" id="logoutBtn" style="display:none;">Logout</a>
+  </div>
+</div>
+
+<!-- BOOKING SECTION -->
+<div class="booking-container">
+  <div class="booking-card">
+
+    <h2 class="booking-title">Book a Service</h2>
+
+    <form id="bookingForm" onsubmit="event.preventDefault(); bookService();">
+
+  <!-- SERVICE -->
+  <div class="form-group">
+    <label>Service</label>
+    <select id="service">
+      <option value="Office Chair Repair">Office Chair Repair</option>
+      <option value="Sofa Repair">Sofa Repair</option>
+      <option value="Mattress Repair">Mattress Repair</option>
+      <option value="Custom Furniture">Custom Furniture</option>
+    </select>
+  </div>
+
+  <!-- CUSTOM OPTIONS -->
+  <div class="form-group" id="customOptions" style="display:none;">
+    <label>Custom Furniture Type</label>
+    <select id="customType">
+      <option value="">Select option</option>
+      <option value="Sofa">Sofa</option>
+      <option value="Chair">Chair</option>
+      <option value="Curtain">Curtain</option>
+      <option value="Mattress">Mattress</option>
+    </select>
+  </div>
+
+  <!-- NAME -->
+  <div class="form-group">
+    <label>Name</label>
+    <input type="text" id="name" placeholder="Your name">
+  </div>
+
+  <!-- PHONE -->
+  <div class="form-group">
+    <label>Phone</label>
+    <input type="text" id="phone" placeholder="10-digit phone number">
+  </div>
+
+<!-- Description -->
+<div class="form-group">
+  <label>Problem Description</label>
+  <textarea id="description" rows="4" placeholder="Describe your issue in detail..."></textarea>
+</div>
+
+<!-- Image Upload -->
+<div class="form-group">
+  <label>Upload Images (optional)</label>
+  <input type="file" id="images" multiple accept="image/*">
+</div>
+  <!-- DATE -->
+  <div class="form-group">
+    <label>Preferred Date</label>
+    <input type="date" id="preferredDate">
+  </div>
+
+  <!-- TIME SLOT -->
+  <div class="form-group">
+    <label>Preferred Time Slot</label>
+    <select id="timeSlot">
+      <option value="">Select time</option>
+      <option value="9 AM - 12 PM">9 AM – 12 PM</option>
+      <option value="12 PM - 3 PM">12 PM – 3 PM</option>
+      <option value="3 PM - 6 PM">3 PM – 6 PM</option>
+      <option value="6 PM - 9 PM">6 PM – 9 PM</option>
+    </select>
+  </div>
+
+  <button type="submit" class="booking-btn">Confirm Booking</button>
+
+  <div id="bookingMessage" class="booking-msg"></div>
+</form>
+
+
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+
+<script>
+const firebaseConfig = {
+  apiKey: "AIzaSyD_kWiJPhSRAbtj31k2s373LggRs6wDTQI",
+  authDomain: "restwelleveryday.firebaseapp.com",
+  projectId: "restwelleveryday",
+  storageBucket: "restwelleveryday.firebasestorage.app",
+  messagingSenderId: "156467241216",
+  appId: "1:156467241216:web:db08000e4e68b19b5f53e5",
+  measurementId: "G-C6RC144FDN"
+};
+
+  firebase.initializeApp(firebaseConfig);
+</script>
+
+<script>
+firebase.auth().onAuthStateChanged(user => {
+  if (!user) {
+    window.location.href = "index.html";
+  }
+});</script>
+<script src="js/user.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-storage-compat.js">
+  const storage = firebase.storage();
+</script>
+</body>
+</html>

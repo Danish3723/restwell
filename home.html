@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RestWell – Home</title>
+  <title>RestWell – Comfort Solution Experts</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="navbar">
+  <div class="logo">RestWell</div>
+  <div class="nav-links">
+    <a href="home.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="history.html">My Bookings</a>
+     <!-- Logout button -->
+    <a href="#" id="logoutBtn" style="display:none;">Logout</a>
+  </div>
+</div>
+
+<section class="hero" style="background-image:url('images/hero-bg.png')">
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <h1>Comfort Solutions<br>for Modern Living</h1>
+
+    <p>
+      Office Chair Repair • Sofa Repair • Mattress Repair<br>
+      Custom Sofas • Curtains • Chairs • Mattresses
+    </p>
+
+    <a href="services.html" class="btn-primary premium-btn">
+      Explore Services
+    </a>
+  </div>
+
+</section>
+
+<section class="why-choose">
+  <h2>Why Choose RestWell?</h2>
+
+  <div class="why-container">
+
+    <div class="why-card">
+      <h3>Expert Technicians</h3>
+      <p>Skilled professionals with years of hands-on furniture repair experience.</p>
+    </div>
+
+    <div class="why-card">
+      <h3> Quality Materials</h3>
+      <p>We use durable and premium-grade materials for long-lasting results.</p>
+    </div>
+
+    <div class="why-card">
+      <h3> Affordable Pricing</h3>
+      <p>Transparent pricing with no hidden charges or surprise costs.</p>
+    </div>
+
+    <div class="why-card">
+      <h3> Fast Service</h3>
+      <p>Quick turnaround time with on-time doorstep service.</p>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-content">
+    <p>📞 Call / WhatsApp: <strong>+91 9029551130</strong></p>
+    <p>© 2026 RestWell. All Rights Reserved.</p>
+  </div>
+</footer>
+
+</script>
+<!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyD_kWiJPhSRAbtj31k2s373LggRs6wDTQI",
+    authDomain: "restwelleveryday.firebaseapp.com",
+    projectId: "restwelleveryday",
+    storageBucket: "restwelleveryday.firebasestorage.app",
+    messagingSenderId: "156467241216",
+    appId: "1:156467241216:web:db08000e4e68b19b5f53e5"
+  };
+
+  if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig);
+  }
+</script>
+
+<!-- Your main JS -->
+<script src="js/user.js"></script>
+</body>
+</html>

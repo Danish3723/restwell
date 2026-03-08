@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RestWell – Services</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="navbar">
+  <div class="logo">RestWell</div>
+  <div class="nav-links">
+    <a href="home.html">Home</a>
+    <a class="active">Services</a>
+    <a href="history.html">My Bookings</a>
+    <a href="#" id="logoutBtn" style="display:none;">Logout</a>
+  </div>
+</div>
+
+<section class="services-section">
+  <h2 class="section-title">Our Services</h2>
+
+  <div class="services-grid">
+
+    <div class="service-card reveal" onclick="handleServiceClick('Office Chair Repair')">
+      <img src="images/chair.jpg" alt="Office Chair Repair">
+      <div class="service-overlay">
+        <h3>Office Chair Repair</h3>
+        <p>Hydraulics, wheels & cushioning</p>
+      </div>
+    </div>
+
+    <div class="service-card reveal" onclick="handleServiceClick('Sofa Repair')">
+      <img src="images/sofa.jpg" alt="Sofa Repair">
+      <div class="service-overlay">
+        <h3>Sofa Repair</h3>
+        <p>Fabric, springs & structure</p>
+      </div>
+    </div>
+
+    <div class="service-card reveal" onclick="handleServiceClick('Mattress Repair')">
+      <img src="images/mattress.jpg" alt="Mattress Repair">
+      <div class="service-overlay">
+        <h3>Mattress Repair</h3>
+        <p>Sagging & foam replacement</p>
+      </div>
+    </div>
+
+    <div class="service-card reveal" onclick="handleServiceClick('Custom Furniture')">
+      <img src="images/custom.jpg" alt="Custom Furniture">
+      <div class="service-overlay">
+        <h3>Custom Furniture</h3>
+        <p>Sofas, chairs & curtains</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- LOGIN MODAL -->
+<div id="loginModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeLogin()">&times;</span>
+
+    <h2>Login Required</h2>
+    <input type="text" id="loginName" placeholder="Name" required />
+    <input type="email" id="loginEmail" placeholder="Email" required />
+    <input type="password" id="loginPassword" placeholder="Password" required />
+    <input type="text" id="loginPhone" placeholder="Phone Number" required />
+
+    <button onclick="loginUser()">Login</button>
+
+    <p id="loginError" style="color:red; margin-top:8px;"></p>
+
+    <p style="margin-top:10px;">
+      Don't have an account?
+      <a href="register.html" style="color:#2ecc71; text-decoration:none;">
+        Register
+      </a>
+    </p>
+  </div>
+</div>
+
+<!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyD_kWiJPhSRAbtj31k2s373LggRs6wDTQI",
+    authDomain: "restwelleveryday.firebaseapp.com",
+    projectId: "restwelleveryday",
+    storageBucket: "restwelleveryday.firebasestorage.app",
+    messagingSenderId: "156467241216",
+    appId: "1:156467241216:web:db08000e4e68b19b5f53e5",
+    measurementId: "G-C6RC144FDN"
+  };
+
+  firebase.initializeApp(firebaseConfig);
+</script>
+
+<script src="js/user.js"></script>
+<script>
+  history.scrollRestoration = "manual";
+  window.scrollTo(0, 0);
+</script>
+</body>
+</html>
