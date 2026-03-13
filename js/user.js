@@ -294,3 +294,12 @@ function setupLogout() {
     });
   });
 }
+document.addEventListener("DOMContentLoaded", function () {
+
+  const dateInput = document.getElementById("preferredDate");
+
+  const today = new Date().toISOString().split("T")[0];
+
+  dateInput.setAttribute("min", today);
+
+});
